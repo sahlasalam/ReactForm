@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import FormBody from './component/FormBody'
 
 function App() {

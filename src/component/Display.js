@@ -3,7 +3,7 @@ import React from 'react'
 function display({popUp ,setPopUp, employee}) {
   return (
     popUp?<div className='popbox'>
-        <table>
+        <table border="1">
             <thead>
                 <tr><th>Name</th>
                 <th>Designation</th>

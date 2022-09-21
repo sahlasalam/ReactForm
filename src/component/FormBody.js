@@ -29,10 +29,18 @@ function FormBody() {
 
     const addItem=()=>{
         setEmployee(current=>[...current, {Name :name , Designation : desg ,  Doj : date , Mobile : num }]);   
-        // setEmployee(current=>[...current, desg]);  
+        setName("");
+        setDesg("");
+        setDate("");
+        setNum("");
     }
     const addpop=()=>{
         setPopUp(true);
+    }
+
+    const submitForm=()=>{
+        addItem();
+        addpop();
     }
     // console.log(employee);
 
@@ -54,7 +62,7 @@ function FormBody() {
         <h5>Mob Number :</h5>
         <input value={num} onChange={phone}></input>
         </div>
-        <button className='btn1' onClick={()=>{addpop(); addItem();}}>Submit</button>
+        <button className='btn1' onClick={submitForm}>Submit</button>
         <Display popUp={popUp} name={name} desg={desg} setPopUp={setPopUp} employee={employee}/>
 
     </div>
