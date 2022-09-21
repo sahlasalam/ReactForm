@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Display from './Display'
+import {useNavigate} from 'react-router-dom'
 
 function FormBody() {
 
@@ -9,7 +10,12 @@ function FormBody() {
     const [num, setNum] = useState();
     const [date, setDate] = useState();
     const [popUp, setPopUp] = useState(false);
-    // const employee = [];
+
+    const navigate = useNavigate();
+
+    const navigateToList=()=>{
+        navigate('/list', {state:employee})
+    }
 
     const enterName=(e)=>{
         setName(e.target.value);
@@ -63,6 +69,7 @@ function FormBody() {
         <input value={num} onChange={phone}></input>
         </div>
         <button className='btn1' onClick={submitForm}>Submit</button>
+        <button className='btn1' onClick={navigateToList}>Show List</button>
         <Display popUp={popUp} name={name} desg={desg} setPopUp={setPopUp} employee={employee}/>
 
     </div>
